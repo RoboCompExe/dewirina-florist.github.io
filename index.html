@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEWIRINA - Ucapan Papan Bunga</title>
+    <meta name="description" content="DEWIRINA offers premium flower board making services for weddings, events, and special occasions. Custom designs with fresh flowers.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "dew-green": "#2d5a27",
+                        "dew-light": "#f7f9f7",
+                        "dew-gold": "#d4af37",
+                        "dew-pink": "#e8b4b8",
+                        "dew-lavender": "#b8a1d9"
+                    },
+                    fontFamily: {
+                        "playfair": ["Playfair Display", "serif"],
+                        "montserrat": ["Montserrat", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://picsum.photos/32?random=99">
+</head>
+<body class="font-montserrat text-gray-800 bg-dew-light">
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-dew-green flex items-center justify-center mr-3">
+                        <span class="text-white font-bold text-xl">D</span>
+                    </div>
+                    <a href="#" class="text-2xl font-bold text-dew-green font-playfair" onclick="event.preventDefault(); scrollToSection('hero')">DEWIRINA</a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-dew-green font-medium transition-colors" onclick="event.preventDefault(); scrollToSection('services')">Layanan</a>
+                    <a href="#" class="text-gray-700 hover:text-dew-green font-medium transition-colors" onclick="event.preventDefault(); scrollToSection('pricing')">Daftar Harga</a>
+                    <a href="#" class="text-gray-700 hover:text-dew-green font-medium transition-colors" onclick="event.preventDefault(); scrollToSection('gallery')">Galeri</a>
+                    <a href="#" class="text-gray-700 hover:text-dew-green font-medium transition-colors" onclick="event.preventDefault(); scrollToSection('contact')">Kontak</a>
+                </div>
+                
+                <button class="md:hidden text-dew-green text-2xl" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden bg-white border-t py-4" id="mobileMenu">
+                <div class="flex flex-col space-y-4">
+                    <a href="#" class="text-gray-700 hover:text-dew-green font-medium py-2" onclick="event.preventDefault(); scrollToSection('services'); toggleMobileMenu()">Layanan</a>
+                    <a href="#" class="text-gray-700 hover:text-dew-green font-medium py-2" onclick="event.preventDefault(); scrollToSection('pricing'); toggleMobileMenu()">Daftar Harga</a>
+                    <a href="#" class="text-gray-700 hover:text-dew-green font-medium py-2" onclick="event.preventDefault(); scrollToSection('gallery'); toggleMobileMenu()">Galeri</a>
+                    <a href="#" class="text-gray-700 hover:text-dew-green font-medium py-2" onclick="event.preventDefault(); scrollToSection('contact'); toggleMobileMenu()">Kontak</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative overflow-hidden bg-gradient-to-r from-dew-green/90 to-dew-lavender/90 text-white">
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/1920/1080?random=1" alt="Flower background" class="w-full h-full object-cover opacity-30">
+        </div>
+        <div class="container mx-auto px-4 py-20 md:py-32 relative z-10">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-6xl font-bold font-playfair mb-6">Elegant Flower Boards for Every Moments</h1>
+                <p class="text-xl mb-8 opacity-90">DEWIRINA Ucapan Papan Bunga Bengkulu yang menciptakan rangkaian bunga menakjubkan diatas papan untuk segala moment penting dalam setiap kesempatan. Dibuat dengan keterampilan tangan yang ahli dan terbaik dibidangnya dengan detail yang menakjubkan.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="bg-white text-dew-green font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition-all shadow-lg" onclick="event.preventDefault(); scrollToSection('pricing')">Daftar Harga</a>
+                    <a href="#" class="border-2 border-white text-white font-semibold py-3 px-8 rounded-full hover:bg-white/10 transition-all" onclick="event.preventDefault(); scrollToSection('contact')">konsultasi Booking</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dew-green font-playfair mb-4">Layanan Ucapan Papan Bunga</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Sudah berdiri sejak tahun 2010 sebagai pendiri dan pelopor ucapan papan bunga Bengkulu. Spesialis dalam pembuatan bunga yang indah dengan berbagai tema yang berbeda dan kostumisasi.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-dew-light rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 rounded-full bg-dew-pink/20 flex items-center justify-center mb-6">
+                        <i class="fas fa-heart text-dew-pink text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dew-green mb-4">Ucapan Bunga Pernikahan</h3>
+                    <p class="text-gray-600 mb-6">Kami terbiasa untuk membuat ucapan papan bunga yang indah di hari pernikahan dan keluarga besar dengan kostumisasi elegan yang indah dan sesuai dengan selera pelanggan yang akan terus dikenang.</p>
+                </div>
+                
+                <div class="bg-dew-light rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 rounded-full bg-dew-lavender/20 flex items-center justify-center mb-6">
+                        <i class="fas fa-calendar-alt text-dew-lavender text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dew-green mb-4">Acara Even Komunitas Organisasi</h3>
+                    <p class="text-gray-600 mb-6">Ucapan acara dengan komunitas dan organisasi dari seluruh lapisan masyarakat dengan baik formal maupun informal dengan tampilan yang menarik ditambah kemeriahan yang tak terlupakan.</p>
+                </div>
+                
+                <div class="bg-dew-light rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 rounded-full bg-dew-gold/20 flex items-center justify-center mb-6">
+                        <i class="fas fa-gift text-dew-gold text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dew-green mb-4">Ucapan Di Hari Spesial</h3>
+                    <p class="text-gray-600 mb-6">Sudah menjadi kepahaman kami dalam menciptakan ucapan berkesan pada acara tertentu pada hari-hari teristimewa setiap orang pada perayaan sekali seumur hidupnya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-dew-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dew-green font-playfair mb-4">Daftar Harga Ucapan Papan Bunga</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Kami menawarkan harga yang kompetitif dan terjangkau untuk setiap kalangan dan disesuaikan dengan cerita pada moment yang manis.</p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center">
+            
+                    <!-- CARD 1 -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg border-t-4 border-dew-pink">
+                        <div class="text-center mb-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">
+                                Ucapan Papan Bunga Standar
+                            </h3>
+                            <div class="text-3xl font-bold text-dew-green">
+                                Rp. 250.000
+                                <span class="text-lg text-gray-500">/board</span>
+                            </div>
+                            <p class="text-gray-500 text-sm mt-2">
+                                Opsi pilihan terbaik
+                            </p>
+                        </div>
+            
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-dew-green mr-3"></i>
+                                180cm x 220cm ukuran papan
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-dew-green mr-3"></i>
+                                Kostumisasi ucapan
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-dew-green mr-3"></i>
+                                Tema pilihan terbaik
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-dew-green mr-3"></i>
+                                Gratis pengantaran ke seluruh tempat
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-dew-green mr-3"></i>
+                                Bebas revisi
+                            </li>
+                        </ul>
+            
+                        <a href="#contact"
+                           class="block w-full bg-dew-pink text-white text-center font-semibold py-3 rounded-lg hover:bg-dew-pink/80 transition-colors">
+                            Select Plan
+                        </a>
+                    </div>
+            
+                    <!-- CARD 2 -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg border-t-4 border-dew-lavender relative">
+                        <div class="absolute top-0 right-0 bg-dew-lavender text-white px-4 py-1 rounded-bl-lg rounded-tr-xl text-sm font-semibold">
+                            Pilihan Terbaik
+                        </div>
+            
+                        <div class="text-center mb-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">
+                                Ucapan Papan Bunga Besar
+                            </h3>
+                            <div class="text-3xl font-bold text-dew-green">
+                                Rp. 500.000
+                                <span class="text-lg text-gray-500">/board</span>
+                            </div>
+                            <p class="text-gray-500 text-sm mt-2">
+                                Opsi yang paling diminati
+                            </p>
+                        </div>
+            
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-dew-green mr-3"></i>
+                                180cm x 440cm ukuran papan
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-dew-green mr-3"></i>
+                                Kostumisasi ucapan
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-dew-green mr-3"></i>
+                                Tema pilihan terbaik
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-dew-green mr-3"></i>
+                                Gratis pengantaran ke seluruh tempat
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-dew-green mr-3"></i>
+                                Bebas revisi
+                            </li>
+                        </ul>
+            
+                        <a href="#contact"
+                           class="block w-full bg-dew-lavender text-white text-center font-semibold py-3 rounded-lg hover:bg-dew-lavender/80 transition-colors">
+                            Select Plan
+                        </a>
+                    </div>
+            
+                </div>
+            </div>            
+            
+            <div class="mt-12 bg-white rounded-xl p-8 shadow-lg max-w-6xl mx-auto">
+                <h3 class="text-2xl font-bold text-dew-green mb-6 text-center">
+                    Layanan Tambahan
+                </h3>
+            
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+                    <!-- CARD 1 -->
+                    <div class="border border-gray-200 rounded-lg p-6">
+                        <h4 class="font-bold text-lg mb-2">
+                            Pengantaran & Penempatan
+                        </h4>
+                        <p class="text-gray-600 mb-4">
+                            Pengantaran profesional dan penempatan papan bunga yang ideal
+                            pada tempat acara yang sudah ditentukan.
+                        </p>
+                        <div class="font-bold text-dew-green">
+                            Termasuk dalam paket
+                        </div>
+                    </div>
+            
+                    <!-- CARD 2 -->
+                    <div class="border border-gray-200 rounded-lg p-6">
+                        <h4 class="font-bold text-lg mb-2">
+                            Opsi Revisi
+                        </h4>
+                        <p class="text-gray-600 mb-4">
+                            Bersedia apabila ada revisi pada papan yang sudah dipesan
+                            dan siap melayani selama 24 jam.
+                        </p>
+                        <div class="font-bold text-dew-green">
+                            Gratis
+                        </div>
+                    </div>
+            
+                </div>
+            </div>            
+        
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dew-green font-playfair mb-4">Galeri Ucapan Papan Bunga</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Telusuri lebih dalam tentang kami dengan cerita-cerita ucapan papan bunga yang sudah kami jalani sejak 2010 ini</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="rounded-xl overflow-hidden shadow-lg group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/600/400?random=2" alt="Wedding flower board with white roses" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-dew-green/0 group-hover:bg-dew-green/20 transition-colors duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Pernikahan Yang Elegan</h3>
+                        <p class="text-gray-600">Turut memeriahkan acara pernikahan pada hari spesial setiap orang.</p>
+                    </div>
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-lg group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/600/400?random=3" alt="Birthday flower board with colorful blooms" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-dew-green/0 group-hover:bg-dew-green/20 transition-colors duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Perayaan Acara Komunitas</h3>
+                        <p class="text-gray-600">Tempat dimana setiap komunitas dan organisasi dalam bentuk perayaan kebersamaan yang hangat.</p>
+                    </div>
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-lg group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/600/400?random=4" alt="Corporate event flower board" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-dew-green/0 group-hover:bg-dew-green/20 transition-colors duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Hari-hari formal dan informal</h3>
+                        <p class="text-gray-600">Peryaaan pada acara pelantikan dan peresmian suatu lembaga</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-dew-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dew-green font-playfair mb-4">Kontak DEWIRINA</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Hubungi Kami untuk diskusi dan konsultasi jadwal Ucapan Papan Bunga Bengkulu.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-2xl font-bold text-dew-green mb-8">Informasi Kontak</h3>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-dew-green/10 flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-dew-green text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Lokasi</h4>
+                                <p class="text-gray-700">Jl. S Parman No. 27, Tanah Patah<br>Ratu Agung<br>Kota Bengkulu</p>
+                                <a href="https://maps.app.goo.gl/VGPiMzz3csFg7JZX6" target="_blank" class="text-dew-green font-medium mt-2 inline-block hover:underline">Buka di Google Maps</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-dew-pink/10 flex items-center justify-center mr-4">
+                                <i class="fas fa-phone-alt text-dew-pink text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Telepon</h4>
+                                <p class="text-gray-700">Haikal: <a href="https://wa.me/6283830459368?text=Halo%20Haikal%2C%20saya%20mau%20konsultasi%20untuk%20Ucapan%20Papan%20Bunga%20nya%20bisa%3F%20Terimakasih" class="text-dew-green hover:underline">+62 838-3045-9368</a></p>
+                                <p class="text-gray-700">Dewirina: <a href="https://wa.me/628117399774?text=Halo%20Haikal%2C%20saya%20mau%20konsultasi%20untuk%20Ucapan%20Papan%20Bunga%20nya%20bisa%3F%20Terimakasih" class="text-dew-green hover:underline">+62 811-7399-774</a></p>
+                                <a href="https://wa.me/6283830459368?text=Halo%20Haikal%2C%20saya%20mau%20konsultasi%20untuk%20Ucapan%20Papan%20Bunga%20nya%20bisa%3F%20Terimakasih" target="_blank" class="text-dew-green font-medium mt-2 inline-block hover:underline">Kontak WhatsApp</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-dew-gold/10 flex items-center justify-center mr-4">
+                                <i class="fas fa-clock text-dew-gold text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Jadwal Operasional</h4>
+                                <p class="text-gray-700">Senin - Jum'at: 9:00 WIB - 18:00 WIB</p>
+                                <p class="text-gray-700">Sabtu - Minggu: 10:00 WIB - 22:00 WIB</p>
+                                <p class="text-gray-700">Operasional Penuh: 24 Jam</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h4 class="font-bold text-lg mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-dew-green text-white flex items-center justify-center hover:bg-dew-green/80 transition-colors" onclick="event.preventDefault()">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-dew-green text-white flex items-center justify-center hover:bg-dew-green/80 transition-colors" onclick="event.preventDefault()">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-dew-green text-white flex items-center justify-center hover:bg-dew-green/80 transition-colors" onclick="event.preventDefault()">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-dew-green text-white flex items-center justify-center hover:bg-dew-green/80 transition-colors" onclick="event.preventDefault()">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                    <!-- Google Maps Embed -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-6 border-b">
+                            <h3 class="text-xl font-bold text-dew-green">Temui Kami di Google Maps</h3>
+                        </div>
+                        <div class="h-64 bg-gray-200 relative">
+                            <!-- Google Maps Embed Placeholder -->
+                            <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-dew-green/20 to-dew-lavender/20">
+                                <div class="text-center p-8">
+                                    <i class="fas fa-map-marked-alt text-dew-green text-5xl mb-4"></i>
+                                    <h4 class="text-xl font-bold text-dew-green mb-2">Lokasi DEWIRINA Florist</h4>
+                                    <p class="text-gray-700">Jl. S Parman No. 27, Tanah Patah, Ratu Agung, Kota Bengkulu</p>
+                                    <a href="https://maps.app.goo.gl/Fc7cTG8pyG2rrfPq6" target="_blank" class="inline-block mt-4 bg-dew-green text-white font-semibold py-2 px-6 rounded-lg hover:bg-dew-green/80 transition-colors">Open in Google Maps</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dew-green text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center mr-3">
+                            <span class="text-dew-green font-bold text-xl">D</span>
+                        </div>
+                        <span class="text-2xl font-bold font-playfair">DEWIRINA</span>
+                    </div>
+                    <p class="text-gray-300">Pencipta Ucapan Papan Bunga Bengkulu terbaik untuk pernikahan, acara, perayaan dan kesempatan spesiap sejak 2010.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Info Kontak</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-3 mt-1"></i>
+                            <span>Jl. Tanah Patah, Ratu Agung, Kota Bengkulu</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3"></i>
+                            +62 838-3045-9368<a href="https://wa.me/6283830459368?text=Halo%20Haikal%2C%20saya%20mau%20konsultasi%20untuk%20Ucapan%20Papan%20Bunga%20nya%20bisa%3F%20Terimakasih" class="text-dew-green hover:underline" target="+62 838-3045-9368">+62 838-3045-9368</a>
+                        </li>                        
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>robocomp.exe@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2010 DEWIRINA Ucapan Papan Bunga Bengkulu</p>
+                <p class="mt-2 text-sm">Website designed for premium floral arrangement services.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent -->
+    <div id="cookieConsent" class="fixed bottom-0 left-0 right-0 bg-dew-green text-white p-4 shadow-lg z-50 hidden">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-4 md:mb-0 md:mr-6">
+                <p class="text-sm">We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+            </div>
+            <div class="flex space-x-4">
+                <button id="cookieAccept" class="bg-white text-dew-green font-semibold py-2 px-6 rounded-lg hover:bg-gray-100 transition-colors">Accept</button>
+                <button id="cookieDecline" class="border border-white text-white font-semibold py-2 px-6 rounded-lg hover:bg-white/10 transition-colors">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Define data at the beginning
+        const pricingPlans = [
+            { "id": 1, "name": "Small Board", "price": 89, "color": "dew-pink" },
+            { "id": 2, "name": "Standard Board", "price": 149, "color": "dew-lavender" },
+            { "id": 3, "name": "Large Board", "price": 229, "color": "dew-gold" },
+            { "id": 4, "name": "Custom Design", "price": 349, "color": "dew-green" }
+        ];
+        
+        const contactEmails = [
+            { "type": "General Inquiries", "address": "info@dewirina.com" },
+            { "type": "Bookings", "address": "bookings@dewirina.com" },
+            { "type": "Custom Designs", "address": "design@dewirina.com" }
+        ];
+        
+        const businessHours = [
+            { "days": "Monday - Friday", "hours": "9:00 AM - 6:00 PM" },
+            { "days": "Saturday", "hours": "10:00 AM - 4:00 PM" },
+            { "days": "Sunday", "hours": "By appointment only" }
+        ];
+
+        // DOM Elements
+        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const cookieConsent = document.getElementById("cookieConsent");
+        const cookieAccept = document.getElementById("cookieAccept");
+        const cookieDecline = document.getElementById("cookieDecline");
+        const contactForm = document.getElementById("contactForm");
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle("hidden");
+            const icon = mobileMenuBtn.querySelector("i");
+            if (mobileMenu.classList.contains("hidden")) {
+                icon.className = "fas fa-bars";
+            } else {
+                icon.className = "fas fa-times";
+            }
+        }
+
+        mobileMenuBtn.addEventListener("click", toggleMobileMenu);
+
+        // Smooth Scroll Function
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop - 80,
+                    behavior: "smooth"
+                });
+            }
+        }
+
+        // Contact Form Submission
+        contactForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const service = document.getElementById("service").value;
+            const message = document.getElementById("message").value;
+            
+            // In a real application, you would send this data to a server
+            // For demo purposes, we'll just show an alert
+            alert("Thank you, " + name + "! Your message has been sent. We'll contact you at " + email + " soon.");
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        // Cookie Consent
+        function checkCookieConsent() {
+            const consent = localStorage.getItem("dewirinaCookieConsent");
+            if (!consent) {
+                // Show after 2 seconds
+                setTimeout(() => {
+                    cookieConsent.classList.remove("hidden");
+                }, 2000);
+            }
+        }
+
+        cookieAccept.addEventListener("click", function() {
+            localStorage.setItem("dewirinaCookieConsent", "accepted");
+            cookieConsent.classList.add("hidden");
+        });
+
+        cookieDecline.addEventListener("click", function() {
+            localStorage.setItem("dewirinaCookieConsent", "declined");
+            cookieConsent.classList.add("hidden");
+        });
+
+        // Initialize on page load
+        document.addEventListener("DOMContentLoaded", function() {
+            checkCookieConsent();
+            
+            // Add active class to nav links on scroll
+            const sections = document.querySelectorAll("section[id]");
+            const navLinks = document.querySelectorAll("header nav a");
+            
+            function highlightNavLink() {
+                let scrollY = window.pageYOffset;
+                
+                sections.forEach(section => {
+                    const sectionHeight = section.offsetHeight;
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionId = section.getAttribute("id");
+                    
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove("text-dew-green");
+                            link.classList.add("text-gray-700");
+                            if (link.getAttribute("href") === "#" && link.textContent.toLowerCase().includes(sectionId)) {
+                                link.classList.remove("text-gray-700");
+                                link.classList.add("text-dew-green");
+                            }
+                        });
+                    }
+                });
+            }
+            
+            window.addEventListener("scroll", highlightNavLink);
+            
+            // Initialize with first section
+            highlightNavLink();
+        });
+
+        // Image lazy loading enhancement
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll("img[loading='lazy']");
+            
+            if ("IntersectionObserver" in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src || img.src;
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                
+                images.forEach(img => imageObserver.observe(img));
+            }
+        });
+    </script>
+</body>
+</html>
